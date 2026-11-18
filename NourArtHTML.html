@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>NourArt - Sanatı Öğrenin</title>
+    <link rel="stylesheet" href="NourArtCSS/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
+    <link rel="icon" type="image/png" href="NourArtCSS/favicon-32x32.png">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="foreground-content">
+    <!-- Ana Sayfa -->
+    <!-- Üst Menü -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="NourArtHTML.html">
+            <img src="logo.jpg" alt="NourArt Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="NourArtHTML.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li class="dropdown">
+                    <a href="dersler.html">Dersler</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Karakalem</a></li> 
+                        <li><a href="#">Yağlı Boya</a></li>
+                        <li><a href="#">Akrilik Boya</a></li>
+                        <li><a href="eskizler.html">Eskizler</a></li>
+                        <li><a href="#">Sulu Boya</a></li>
+                        <li><a href="#">Pastel Boya</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Çizim Rehberi</a></li>
+                <li><a href="#">Resmin Tarihi</a></li>
+                <li><a href="#">Sizin Eserleriniz</a></li>
+                <li><a href="#">Hakkında</a></li>
+                <li class="login"><a href="giris.html">Giriş Yap</a></li>
+                <li><!-- Arama Çubuğu -->
+                    <div class="search-container">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <form class="search-form" action="#" method="get">
+                            <input type="text" name="q" placeholder="Ara..." class="search-input">
+                            <button type="submit" class="search-button">Ara</button>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    </div>
+    <div class="mainart">
+
+    <main> 
+        <h1>Hoş Geldiniz !</h1>
+        <div class="content">
+            <div class="text-section">
+            <p>Sanatı öğrenmek ve yaratıcı bir dünyaya adım atmak için harika bir yerdesiniz!</p>
+        </div>
+        <div class="video-section">
+            <video autoplay loop muted>
+                <source src="Vangogh.mp4" type="video/mp4">
+            </video>
+        </div>
+        </div>
+    </main>
+
+    <!-- Sayfa İçeriği -->
+    <section>
+        <h2><em>Sanatın Temelleri</em></h2>
+        <p>İlk adım olarak, sanatın tarihine bir yolculuk yapın ve resmin önemli isimlerini keşfedin!</p>
+        <img src="ressamlar.jpg" alt="Resmin Tarihi Görseli" class="kesfet-resmi">
+        <button><a href="#">Keşfet</a></button>
+    </section>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 NourArt. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>
+
+

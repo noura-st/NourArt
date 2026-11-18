@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Giriş Yap - NourArt</title>
+    <link rel="stylesheet" href="NourArtCSS/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
+    <link rel="icon" type="image/png" href="NourArtCSS/favicon-32x32.png">
+</head>
+<body>
+    <header>
+         <!-- Üst Menü -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="NourArtHTML.html">
+            <img src="logo.jpg" alt="NourArt Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="NourArtHTML.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li class="dropdown">
+                    <a href="dersler.html">Dersler</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Karakalem</a></li>
+                        <li><a href="#">Yağlı Boya</a></li>
+                        <li><a href="#">Akrilik Boya</a></li>
+                        <li><a href="eskizler.html">Eskizler</a></li>
+                        <li><a href="#">Sulu Boya</a></li>
+                        <li><a href="#">Pastel Boya</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Çizim Rehberi</a></li>
+                <li><a href="#">Resmin Tarihi</a></li>
+                <li><a href="#">Sizin Eserleriniz</a></li>
+                <li><a href="#">Hakkında</a></li>
+                <li class="login"><a href="giris.html">Giriş Yap</a></li>
+                <li><!-- Arama Çubuğu -->
+                    <div class="search-container">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <form class="search-form" action="#" method="get">
+                            <input type="text" name="q" placeholder="Ara..." class="search-input">
+                            <button type="submit" class="search-button">Ara</button>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="login-container">
+            <h1>Giriş Yap</h1>
+            <h2>Hesabınıza Giriş Yapın</h2>
+            <form action="welcome.html" method="post">
+                <div class="input-container">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="E-posta" required>
+                </div>
+                <div class="input-container">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Şifre" required>
+                </div>
+                <button type="submit" class="button">Giriş Yap</button>
+            </form>
+            <p>Henüz bir hesabınız yok mu? <a href="kayit.html">Kayıt Ol</a></p>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 NourArt. Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>

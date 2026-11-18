@@ -1,0 +1,504 @@
+html, body {
+    height: 100%; /* Sayfa yüksekliği %100 */
+    margin: 0; /* Varsayılan margin'i sıfırlıyoruz */
+    padding: 0; /* Varsayılan padding'i sıfırlıyoruz */
+}
+/* Genel Arka Plan ve Resim */
+body {
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+    background-color: #FAF6EF; /* Arka plan rengi */
+    color: #4A4A4A;
+    background-image: url('arkaplan7.jpg'); /* Arka plan resmi */
+    background-size: cover; /* Ekranın tamamını kaplar */
+    background-position: center; /* Resmi ortalar */
+    background-attachment: fixed; /* Sabitler */
+    padding-top: 120px; /* Navbar yüksekliğine göre ayarlanır */
+}
+
+.background-image {
+    position: fixed; /* Ekrana sabitlenir */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('arkaplan7.jpg');
+    background-size: cover; /* Resmi ekran boyutuna göre uyumlar */
+    background-position: center;
+    z-index: -1; /* İçeriğin arkasında kalır */
+    filter: brightness(0.5); /* Hafif karartma efekti */
+}
+main {
+    text-align: center;
+    margin: 20px;
+}
+.text-section {
+    flex: 1; /* Yazı alanı için esnek yer kaplama */
+    text-align: left; /* Yazıyı sola hizalar */
+    margin-top: 200px; /* Üstten boşluk ekler, aşağıya alır */
+    line-height: 1.8; /* Satır aralığını artırır */
+    padding: 10px;
+}
+.content {
+    display: flex;
+    justify-content: space-between; /* Yazı ve videoyu sağa-sola yerleştirir */
+    align-items: flex-start; /* Elemanları üstten hizalar */
+    gap: 20px; /* Elemanlar arasındaki boşluk */
+    margin-top: 20px;
+}
+
+.video-section {
+    text-align: center;
+    flex: 1; /* Video alanı için esnek yer kaplama */
+}
+
+video {
+    width: 100%; /* Videoyu kapsayıcıya göre boyutlandırır */
+    max-width: 350px; /* Maksimum genişlik sınırı */
+    border-radius: 10px; /* Yuvarlatılmış köşeler */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+}
+
+h1 {
+    text-align: center;
+    color: #D47474; /* Pastel kırmızı */
+    font-size: 44px;
+    margin-bottom: 20px; /* Yazı ile içerik arasına boşluk ekler */
+}
+h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #5D5A4E;
+    margin-bottom: 20px;
+}
+/* Navbar */
+.navbar {
+    position: fixed; /* Sabit konum */
+    top: 0; /* Ekranın en üstünde kalır */
+    left: 13%;
+    width: 70%; /* Tüm ekran genişliğini kaplar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20; /* Ön planda görünür */
+    background-color: #E7D8C9; /* Açık pastel krem */
+    padding: 15px 30px;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.navbar .logo img {
+    height: 80px; 
+    max-width: 100%;
+}
+.navbar .logo {
+    display: flex;
+    justify-content: flex-start;
+}
+/* Menü */
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #5D5A4E; /* Soft koyu ton */
+    font-size: 22px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.navbar nav ul li a:hover {
+    color: #A0C4B6; /* Hafif pastel yeşil */
+}
+
+.navbar nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Çizgi menü öğesinin hemen altında */
+    width: 0;
+    height: 2px; /* Çizgi kalınlığı */
+    background-color: #A0C4B6; /* Çizgi rengi */
+    transition: width 0.3s ease;
+}
+/* Hover Durumu */
+.navbar nav ul li a:hover::after {
+    width: 100%; /* Hover'da çizgi tüm genişliğe ulaşır */
+}
+/* Arama Formu */
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    opacity: 0; /* Başlangıçta görünmez */
+    visibility: hidden; /* Ekrandan gizlenir */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    background-color: #E7D8C9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Arama Kutusu Varsayılan Durum */
+.search-container {
+    position: relative;
+}
+.search-input {
+    border: 1px solid #A0C4B6; /* Çerçeve rengi */
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    width: 150px;
+    transition: width 0.3s ease;
+}
+
+.search-input:focus {
+    width: 175px; /* Odaklanıldığında genişler */
+    outline: none;
+    border-color: #5D5A4E;
+}
+
+.search-button {
+    background-color: #A0C4B6;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #5D5A4E;
+}
+/* Arama İkonu */
+.search-icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: #5D5A4E;
+    transition: color 0.3s ease;
+}
+.search-icon:hover {
+    color: #A0C4B6;
+}
+/* Hover ile Arama Kutusunu Görüntüleme */
+.search-container:hover .search-form {
+    opacity: 1; /* Görünür yap */
+    visibility: visible; /* Ekranda göster */
+}
+/* Alt Menü */
+.navbar nav ul li ul.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color:#D5C3AA; /* Alt menü pastel kahverengi */
+    padding: 10px 0;
+    list-style: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000; /* Menünün üstte görünmesini sağlar */
+}
+
+/* Alt Menü Öğeleri */
+.sub-menu li {
+    margin: 0;
+    padding: 5px 20px;
+}
+
+.sub-menu li a {
+    color: #4A4A4A; /* Metin rengi */
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.sub-menu li a:hover {
+    color: #8FB6A6; /* Hover pastel yeşil */
+}
+
+/* Hover ile alt menü görünür */
+.navbar nav ul li:hover > ul.sub-menu {
+    display: block;
+}
+/* Navbar Login Butonu */
+.navbar .login a {
+    background-color:#F7D6A8; /* Yumuşak pastel sarı */
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: #5D5A4E;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .login a:hover {
+    background-color:  #E5C39D; /* Daha koyu pastel sarı */
+}
+/* Form Kapsayıcı */
+.register-container {
+    background-color:  #fcf5ee; /* Açık pastel krem */
+    padding: 30px;
+    border-radius: 15px; /* Köşeleri yuvarlatılmış kutu */
+    width: 400px;
+    margin: 50px auto; /* Sayfanın ortasına yerleştirir */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+    text-align: center; /* İçerikleri ortalar */
+}
+
+/* Başlıklar */
+.register-container h1,
+.register-container h2 {
+    margin: 10px 0;
+    font-family: 'Dancing Script', cursive;
+    color: #D47474; /* Pastel ton kırmızı */
+}
+
+/* Form Elemanları */
+.input-container {
+    position: relative;
+    margin-bottom: 20px; /* Her bir giriş kutusu arasında boşluk */
+}
+
+.input-container i {
+    position: absolute;
+    left: 10px; /* İkonun sol boşluğu */
+    top: 50%; /* İkonun dikeyde ortalanması */
+    transform: translateY(-50%);
+    color: #A39180; /* İkon rengi */
+    font-size: 18px; /* İkon boyutu */
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px 10px 10px 40px; /* Soldan ikon için boşluk */
+    border-radius: 8px;
+    border: 1px solid #D4C4B7;
+    background-color: #F6E8D8; /* Açık pastel */
+    color: #5D5A4E;
+    font-size: 16px;
+}
+
+.input-container input:focus {
+    outline: none;
+    border-color: #A0C4B6; /* Odaklanma efekti */
+}
+
+button {
+    background-color: #E7D8C9; /* Açık pastel krem */
+    color: #5D5A4E;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #A0C4B6; /* Hover rengi */
+}
+
+/* Giriş Sayfası Kutusu */
+.login-container {
+    background-color: #fcf5ee; /* Açık pastel krem */
+    padding: 30px;
+    border-radius: 15px;
+    width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Giriş Sayfası Girdi Alanları */
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-container i {
+    position: absolute; /* İkonu pozisyonlamak için*/
+    left: 10px; /* Sol tarafta biraz boşluk*/
+    color: #5D5A4E;
+}
+
+.input-container input {
+    flex-grow: 1;
+    padding: 10px 10px 10px 35px; /* Sol tarafa padding ekliyoruz, böylece ikonla çakışmıyor */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #F6E8D8; /* Pastel ton */
+    color: #5D5A4E;
+}
+.kesfet-resmi {
+    display: block;         /* Merkezi hizalama için */
+    margin: 0 auto;         /* Merkezi hizalama */
+    max-width: 80%;         /* Görsel genişliği (% olarak) */
+    height: auto;           /* Oran koruma */
+    border-radius: 10px;    
+    margin-bottom: 10px;    /* Alt boşluk */
+    padding: 5px;           /* Kenarlardan içerideki boşluk */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    filter: brightness(70%) contrast(90%);
+}
+
+/* Buton ve Link */
+button {
+    background-color: #E7D8C9; /* Pastel krem */
+    color: #5D5A4E;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #A0C4B6; /* Hover efekti */
+}
+
+/* Alt Mesaj (Kayıt Ol Linki) */
+.login-container p {
+    margin-top: 20px;
+    color: #5D5A4E;
+}
+
+.login-container p a {
+    color: #D47474; /* Pastel kırmızı */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-container p a:hover {
+    text-decoration: underline;
+}
+
+
+/* Kayıt ve Giriş Bağlantısı */
+a {
+    color: rgb(248, 201, 126);
+    text-decoration: none;
+    font-size: 16px;   
+}
+
+a:hover {
+    color: #d2a157;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(231, 216, 201, 0.9); /* Şeffaf krem */
+    color: #5D5A4E;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+    margin-top: auto; 
+    width: 74%;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dersler {
+    text-align: center;
+    padding: 20px;
+}
+
+.dersler-slider {
+    width: 100%; /* Varsayılan genişlik */
+    max-width: 1150px; /* Belirli bir genişlik sınırı */
+    margin: 0 auto; /* Ortala */
+    margin-top: 20px; 
+    padding: 0 20px; /* Navbar'ın padding değeriyle aynı */
+    padding-top: 10px;
+    box-sizing: border-box; /* İçerik genişliğini hesapla */
+    overflow: hidden; /* Taşan içerikleri gizler */
+}
+
+.slider-wrapper {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+    animation: sliderAnimation 15s infinite linear;
+    justify-content: flex-start; /* İçerikler sola hizalanır */
+    padding: 0 ;/* Sağ ve sol iç boşluk */
+    box-sizing: border-box; /* Padding'in genişliği etkilememesi */
+}
+
+.slider-wrapper a {
+    flex: 0 0 auto;
+    width: 200px;
+    text-decoration: none;
+    color: black;
+}
+
+.slider-wrapper img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.slider-wrapper img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.slider-wrapper h2 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+@keyframes sliderAnimation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% )); } /* Taşmayı dengeler */
+}
+
+.mainart{
+    background-color: rgba(231, 216, 201, 0.9); /* Şeffaf krem */
+    width: 90%;
+    max-width: 1088px;
+    height: auto;
+    margin: 20px auto;
+    padding: 20px; 
+    border-radius: 0px;
+}
+section {
+    padding: 10px;
+}
+article {
+    margin-bottom: 20px;
+}
+
+.step {
+    margin: 10px 0;
+}
+
+.step img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+h2, h3 {
+    color: #333;
+}
+p {
+    color: #555;
+    line-height: 1.6;
+}
