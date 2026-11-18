@@ -8,6 +8,10 @@ screens, and a gallery.
 > no backend — the original brief was to practise layout and CSS, and the repository
 > is kept in that state rather than retrofitted into a modern stack.
 
+![Home page](docs/screenshots/home.jpg)
+
+![Course catalogue](docs/screenshots/courses.jpg)
+
 ## What's in here
 
 | Page | What it does |
