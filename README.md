@@ -69,7 +69,7 @@ page; an earlier version was saved in a legacy encoding and rendered `Yağlı` a
 No install, no build:
 
 ```bash
-git clone https://github.com/<username>/nourart.git
+git clone https://github.com/<username>/NourArt.git
 cd nourart
 ```
 
