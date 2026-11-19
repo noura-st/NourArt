@@ -8,15 +8,24 @@ screens, and a gallery.
 > no backend — the original brief was to practise layout and CSS, and the repository
 > is kept in that state rather than retrofitted into a modern stack.
 
-![Home page](docs/screenshots/home.jpg)
+| Home | Course catalogue |
+|---|---|
+| ![Home page](docs/screenshots/home.jpg) | ![Course catalogue](docs/screenshots/courses.jpg) |
 
-![Course catalogue](docs/screenshots/courses.jpg)
+| Drawing tutorial | Login |
+|---|---|
+| ![Tutorial](docs/screenshots/tutorial.jpg) | ![Login](docs/screenshots/login.jpg) |
+
+The home page plays a looping Van Gogh background video. GitHub does not autoplay
+video in a README, so the same clip is shown as an animated GIF:
+
+![Home page animation](docs/screenshots/home-animation.gif)
 
 ## What's in here
 
 | Page | What it does |
 |---|---|
-| `NourArtHTML.html` | Home: hero, intro, "Keşfet" link, Van Gogh background video |
+| `index.html` | Home: hero, intro, "Keşfet" link, Van Gogh background video |
 | `dersler.html` | Course catalogue with an auto-scrolling image slider |
 | `eskizler.html` | Tutorial page: how to draw an anime eye, 7 photographed steps |
 | `giris.html` / `kayit.html` | Login / register forms (UI only, no backend) |
@@ -50,7 +59,8 @@ page; an earlier version was saved in a legacy encoding and rendered `Yağlı` a
 - Course detail pages (`karakalem.html`, `yagli-boya.html`, `akrilik-boya.html`,
   `suluboya.html`, `pastel-boya.html`, `resmin-tarihi.html`) were planned but never
   written; the catalogue links to them and they currently point at `#`.
-- `eskizler.html` references `eskizler.mp4`, which is not in the repository.
+- The tutorial page originally embedded a `eskizler.mp4` clip; that file was never
+  saved, so the video block was removed rather than left pointing at nothing.
 - Not responsive below ~1000 px: the navbar and slider were built for desktop.
 - Unused images remain in `NourArtCSS/` from the planning stage.
 
@@ -63,11 +73,11 @@ git clone https://github.com/<username>/nourart.git
 cd nourart
 ```
 
-Then open `NourArtHTML.html` in a browser. Or serve it, which is closer to how it was
+Then open `index.html` in a browser. Or serve it, which is closer to how it was
 tested:
 
 ```bash
-python -m http.server 8000     # http://localhost:8000/NourArtHTML.html
+python -m http.server 8000     # http://localhost:8000/
 ```
 
 ## Licence
