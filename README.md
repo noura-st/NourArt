@@ -8,6 +8,18 @@ screens, and a gallery.
 > no backend — the original brief was to practise layout and CSS, and the repository
 > is kept in that state rather than retrofitted into a modern stack.
 
+## What I built
+
+- **A CSS-only site** — the auto-scrolling course slider, the dropdown menu and the
+  hover effects are all `@keyframes` and `transform`. There is no JavaScript in the
+  repository.
+- **A five-page structure** — home, course catalogue, a seven-step drawing tutorial,
+  and login/register forms.
+- **A component-flavoured stylesheet** — one 12 KB `styles.css` driving every page,
+  written before I knew what a design system was called.
+
+`HTML` · `CSS` · no build step · no dependencies beyond two CDN assets
+
 | Home | Course catalogue |
 |---|---|
 | ![Home page](docs/screenshots/home.jpg) | ![Course catalogue](docs/screenshots/courses.jpg) |
