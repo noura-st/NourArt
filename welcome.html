@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Hoş Geldiniz - NourArt</title>
+    <link rel="stylesheet" href="NourArtCSS/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
+    <link rel="icon" type="image/png" href="NourArtCSS/favicon-32x32.png">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.jpg" alt="NourArt Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li class="dropdown">
+                    <a href="dersler.html">Dersler</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Karakalem</a></li>
+                        <li><a href="#">Yağlı Boya</a></li>
+                        <li><a href="#">Akrilik Boya</a></li>
+                        <li><a href="eskizler.html">Eskizler</a></li>
+                        <li><a href="#">Sulu Boya</a></li>
+                        <li><a href="#">Pastel Boya</a></li>
+                    </ul>
+                </li>
+                <li><a href="dersler.html">Çizim Rehberi</a></li>
+                <li><a href="eskizler.html">Resmin Tarihi</a></li>
+                <li><a href="#">Sizin Eserleriniz</a></li>
+                <li><a href="#">Hakkında</a></li>
+                <li class="login"><a href="giris.html">Giriş Yap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-container">
+            <h1>Hoş Geldiniz!</h1>
+            <h2 id="greeting">NourArt'a giriş yaptınız.</h2>
+            <p style="margin-top: 1.5rem;">
+                Sanat yolculuğunuza devam edebilirsiniz.
+            </p>
+            <p style="margin-top: 1rem;">
+                <a href="dersler.html" class="button" style="display:inline-block; text-decoration:none; padding: 0.75rem 2rem;">Derslere Göz At</a>
+            </p>
+            <p style="margin-top: 1.5rem;">
+                <a href="index.html">Ana sayfaya dön</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NourArt. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        // The login form posts here with the name the user typed, so the page can
+        // greet them. With no backend this is the only way to carry state across
+        // pages; the PHP version did the same thing server-side.
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var name = params.get('name') || params.get('email');
+            if (name) {
+                var target = document.getElementById('greeting');
+                target.textContent = 'Hoş geldiniz, ' + name + '!';
+            }
+        })();
+    </script>
+</body>
+</html>

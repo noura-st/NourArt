@@ -4,25 +4,25 @@ A Turkish-language art-learning site built with plain HTML and CSS — a landing
 a course catalogue, an anime-drawing step-by-step tutorial, and login/register
 screens.
 
-`HTML` · `CSS` · `PHP` · `MySQL` · **5 pages** · **12 KB stylesheet** · **0 JavaScript** · **CSS-only slider**
+`HTML` · `CSS` · `PHP` · `MySQL` · **6 pages** · **12 KB stylesheet** · **1 tiny script** · **CSS-only slider**
 
-> **Scope note.** The front end is deliberately framework-free: the slider, the
-> dropdown and the hover effects are `@keyframes` and `transform`, with no script
-> anywhere. A later version put the registration form on XAMPP with a PHP handler
-> and a MySQL user table; that PHP file is not in this repository, and the form now
-> posts to `#` so the static site works on its own.
+> **Scope note.** The front end is framework-free: the slider, the dropdown and the
+> hover effects are `@keyframes` and `transform`. The only script in the repository
+> is in `welcome.html`, to carry the user's name across pages. The forms post to
+> `register.php` and `login.php`, which store users in MySQL with
+> `password_hash()` and prepared statements — run `database.sql`, copy
+> `config.example.php` to `config.php`, and it works on XAMPP.
 
 ## What I built
 
-- **A CSS-only site** — the auto-scrolling course slider, the dropdown menu and the
-  hover effects are all `@keyframes` and `transform`. There is no JavaScript in the
-  repository.
-- **A five-page structure** — home, course catalogue, a seven-step drawing tutorial,
-  and login/register forms.
-- **A component-flavoured stylesheet** — one 12 KB `styles.css` driving every page,
-  written before I knew what a design system was called.
-
-`HTML` · `CSS` · no build step · no dependencies beyond two CDN assets
+- **A CSS-only front end** — the auto-scrolling course slider, the dropdown menu and
+  the hover effects are all `@keyframes` and `transform`. No framework, no build step.
+- **A six-page structure** — home, course catalogue, a seven-step drawing tutorial,
+  login, register, and a post-login welcome page.
+- **A working registration backend** — PHP handlers with password hashing, prepared
+  statements and an escaped error path, plus the MySQL schema for the user table.
+- **A 12 KB stylesheet** driving every page, written before I knew what a design
+  system was called.
 
 | Home | Course catalogue |
 |---|---|

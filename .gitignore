@@ -2,3 +2,6 @@
 Thumbs.db
 desktop.ini
 *.zip
+
+# Local database credentials - copy config.example.php and fill it in
+config.php
