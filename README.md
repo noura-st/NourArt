@@ -1,12 +1,16 @@
 # NourArt
 
 A Turkish-language art-learning site built with plain HTML and CSS — a landing page,
-a course catalogue, an anime-drawing step-by-step tutorial, login and register
-screens, and a gallery.
+a course catalogue, an anime-drawing step-by-step tutorial, and login/register
+screens.
 
-> **Academic project (high school / early university).** No build step, no framework,
-> no backend — the original brief was to practise layout and CSS, and the repository
-> is kept in that state rather than retrofitted into a modern stack.
+`HTML` · `CSS` · `PHP` · `MySQL` · **5 pages** · **12 KB stylesheet** · **0 JavaScript** · **CSS-only slider**
+
+> **Scope note.** The front end is deliberately framework-free: the slider, the
+> dropdown and the hover effects are `@keyframes` and `transform`, with no script
+> anywhere. A later version put the registration form on XAMPP with a PHP handler
+> and a MySQL user table; that PHP file is not in this repository, and the form now
+> posts to `#` so the static site works on its own.
 
 ## What I built
 
