@@ -10,8 +10,7 @@ screens.
 > hover effects are `@keyframes` and `transform`. The only script in the repository
 > is in `welcome.html`, to carry the user's name across pages. The forms post to
 > `register.php` and `login.php`, which store users in MySQL with
-> `password_hash()` and prepared statements — run `database.sql`, copy
-> `config.example.php` to `config.php`, and it works on XAMPP.
+> `password_hash()` and prepared statements; the schema is `database.sql`.
 
 ## What I built
 
@@ -80,21 +79,15 @@ page; an earlier version was saved in a legacy encoding and rendered `Yağlı` a
 - Not responsive below ~1000 px: the navbar and slider were built for desktop.
 - Unused images remain in `NourArtCSS/` from the planning stage.
 
-## How to run
+## Environment
 
-No install, no build:
+Plain HTML, CSS and a little PHP — no framework, no build step, no package manager.
+The static pages open directly in a browser. The registration backend expects PHP
+8.x with the PDO MySQL extension and a MySQL database; the schema is in
+`database.sql`.
 
-```bash
-git clone https://github.com/<username>/NourArt.git
-cd nourart
-```
-
-Then open `index.html` in a browser. Or serve it, which is closer to how it was
-tested:
-
-```bash
-python -m http.server 8000     # http://localhost:8000/
-```
+Two CDN assets are referenced (Font Awesome, Google Fonts) and there are no other
+dependencies.
 
 ## Licence
 
